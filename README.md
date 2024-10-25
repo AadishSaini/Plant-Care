@@ -55,3 +55,4 @@ Our app bridges this gap by combining **plant recognition technology with compre
 - **OpenCV**: Utilized for feature extraction and image analysis.
 - **Backend Development**: For data handling, model training, and real-time data extraction.
 - **PyQt5**: Used to develop interesting and intriguing UI's.
+
