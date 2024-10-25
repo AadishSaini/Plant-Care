@@ -106,19 +106,24 @@
 # Import necessary libraries
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from huggingface_hub import hf_hub_download
 import numpy as np
 import os
 
 
+model_file = hf_hub_download(repo_id="Saksham4106/Plant-Detection", filename="test.h5")
 
-model = tf.keras.models.load_model('test.h5')
+# Load the model
+model1 = tf.keras.models.load_model(model_file)
+# model1 = tf.keras.models.load_model('test.h5')
 
 image_size = (224, 224)
 
-dataset_path = "house_plant_species"
-class_labels = sorted(os.listdir(dataset_path))  
+# dataset_path = "house_plant_species"
+# class_labels = sorted(os.listdir(dataset_path))
+class_labels = {0: 'African Violet (Saintpaulia ionantha)', 1: 'Aloe Vera', 2: 'Anthurium (Anthurium andraeanum)', 3: 'Areca Palm (Dypsis lutescens)', 4: 'Asparagus Fern (Asparagus setaceus)', 5: 'Begonia (Begonia spp.)', 6: 'Bird of Paradise (Strelitzia reginae)', 7: 'Birds Nest Fern (Asplenium nidus)', 8: 'Boston Fern (Nephrolepis exaltata)', 9: 'Calathea', 10: 'Cast Iron Plant (Aspidistra elatior)', 11: 'Chinese Money Plant (Pilea peperomioides)', 12: 'Chinese evergreen (Aglaonema)', 13: 'Christmas Cactus (Schlumbergera bridgesii)', 14: 'Chrysanthemum', 15: 'Ctenanthe', 16: 'Daffodils (Narcissus spp.)', 17: 'Dracaena', 18: 'Dumb Cane (Dieffenbachia spp.)', 19: 'Elephant Ear (Alocasia spp.)', 20: 'English Ivy (Hedera helix)', 21: 'Hyacinth (Hyacinthus orientalis)', 22: 'Iron Cross begonia (Begonia masoniana)', 23: 'Jade plant (Crassula ovata)', 24: 'Kalanchoe', 25: 'Lilium (Hemerocallis)', 26: 'Lily of the valley (Convallaria majalis)', 27: 'Money Tree (Pachira aquatica)', 28: 'Monstera Deliciosa (Monstera deliciosa)', 29: 'Orchid', 30: 'Parlor Palm (Chamaedorea elegans)', 31: 'Peace lily', 32: 'Poinsettia (Euphorbia pulcherrima)', 33: 'Polka Dot Plant (Hypoestes phyllostachya)', 34: 'Ponytail Palm (Beaucarnea recurvata)', 35: 'Pothos (Ivy arum)', 36: 'Prayer Plant (Maranta leuconeura)', 37: 'Rattlesnake Plant (Calathea lancifolia)', 38: 'Rubber Plant (Ficus elastica)', 39: 'Sago Palm (Cycas revoluta)', 40: 'Schefflera', 41: 'Snake plant (Sanseviera)', 42: 'Tradescantia', 43: 'Tulip', 44: 'Venus Flytrap', 45: 'Yucca', 46: 'ZZ Plant (Zamioculcas zamiifolia)'}  
 
-def predict_top_k(image_path, model, k=3):
+def predict_top_k(image_path, model=model1, k=1):
     img = load_img(image_path, target_size=image_size)
     img_array = img_to_array(img) / 255.0  
     img_array = np.expand_dims(img_array, axis=0)  
@@ -133,10 +138,10 @@ def predict_top_k(image_path, model, k=3):
 
     return top_k_predictions
 
-image_path = "meriphoto.jpg"
+# image_path = "meriphoto.jpg"
 
-top_3_predictions = predict_top_k(image_path, model, k=3)
+# top_3_predictions = predict_top_k(image_path, model, k=3)
 
-print("Top 3 Predictions:")
-for label, confidence in top_3_predictions:
-    print(f"{label}: {confidence:.2f}")
+# print("Top 3 Predictions:")
+# for label, confidence in top_3_predictions:
+#     print(f"{label}: {confidence:.2f}")

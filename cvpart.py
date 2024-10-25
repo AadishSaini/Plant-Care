@@ -2,10 +2,12 @@ import cv2 as cv
 from consts import *
 from tools import tools2
 import time, threading 
+import testingModel1
 
 def save_img(img):
     try:
         cv.imwrite("detected.jpg", img)
+        print(testingModel1.predict_top_k("detected.jpg"))
     except:
         pass
 
