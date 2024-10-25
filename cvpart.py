@@ -1,6 +1,15 @@
 import cv2 as cv
 from consts import *
 from tools import tools2
+import time, threading 
+
+def save_img(img):
+    try:
+        cv.imwrite("detected.jpg", img)
+    except:
+        pass
+
+
 
 cap = cv.VideoCapture(0)
 t = tools2()
@@ -10,6 +19,8 @@ if not cap.isOpened():
     print('cam nahi khula')
 
 
+start_time = time.time()
+dt = 0
 while True:
     ret, frame = cap.read()
 
@@ -29,27 +40,40 @@ while True:
 
     #create the contoured image
     contour_image = frame.copy() 
-
-    largest_contour_green = max(contours_green, key=cv.contourArea)
-    largest_contour_brown = max(contours_brown, key=cv.contourArea)
+    try:
+        largest_contour_green = max(contours_green, key=cv.contourArea)
+        largest_contour_brown = max(contours_brown, key=cv.contourArea)
+    except:
+        pass
      
     x, y, w, h = cv.boundingRect(largest_contour_green)
     x_b, y_b, w_b, h_b = cv.boundingRect(largest_contour_brown)
 
-    buffer = 20
-    cv.rectangle(contour_image, (x-buffer, y-buffer), (x + w+buffer, y + h +buffer), (0, 0, 255), 2)
+    buffer = 50
+    red_dimensions =  ((x-buffer, y-buffer), (x + w+buffer, y + h +buffer))
+    cv.rectangle(contour_image, red_dimensions[0], red_dimensions[1], (0, 0, 255), 2)
     cv.rectangle(contour_image, (x_b-buffer, y_b-buffer), (x_b + w_b+buffer, y_b + h_b +buffer), (255, 0 , 0), 2) 
 
+    if dt > 2:
+        img = frame[red_dimensions[0][1]: red_dimensions[1][1], red_dimensions[0][0]:red_dimensions[1][0]]
+        thread = threading.Thread(target=save_img, args=(img,))
+        thread.start()
+        dt = 0
+
     
-    
-    cv.imshow("Bounding Box", contour_image)
+    # cv.imshow("Bounding Box", contour_image)
     
 
-    cv.imshow('cam', frame)
-    cv.imshow('cam_hsv', hsv_frame)
-    # cv.imshow('contours', contour_image)
+    # cv.imshow('cam', frame)
+    # cv.imshow('cam_hsv', hsv_frame)
+    cv.imshow('contours', contour_image)
+
+
+    dt += time.time() - start_time
+    start_time = time.time()
     
     if cv.waitKey(1) == ord('q'):
+        thread.join()
         break
 
 cap.release()
