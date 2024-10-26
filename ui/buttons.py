@@ -1,9 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from cv_detection.cvpart import ImageDetection 
+
+import cv_detection.cvpart as cvpart
 
 class Ui_Buttons(object):
     def __init__(self):
-        self.image_detector = ImageDetection()
+        self.image_detector = cvpart.cvmodel()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(640, 480)
@@ -28,7 +30,6 @@ class Ui_Buttons(object):
         font.setPointSize(22)
         self.but1.setFont(font)
         self.but1.setObjectName("but1")
-
         self.but1.clicked.connect(lambda: self.image_detector.video_one())
 
         self.verticalLayout.addWidget(self.but1)
@@ -44,35 +45,12 @@ class Ui_Buttons(object):
         font.setPointSize(22)
         self.but2.setFont(font)
         self.but2.setObjectName("but2")
-
+        self.verticalLayout_2.addWidget(self.but2)
         self.but2.clicked.connect(lambda: self.image_detector.manual_video())
 
-
-        self.verticalLayout_2.addWidget(self.but2)
         self.horizontalLayout.addWidget(self.frame_4)
         self.horizontalLayout_2.addWidget(self.frame)
-
-
-        self.frame_5 = QtWidgets.QFrame(self.frame)
-        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_5.setObjectName("frame_5")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_5)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.but3 = QtWidgets.QPushButton(self.frame_5)
-        font = QtGui.QFont()
-        font.setPointSize(22)
-        self.but3.setFont(font)
-        self.but3.setObjectName("but3")
-
-        self.verticalLayout_3.addWidget(self.but3)
-        self.horizontalLayout.addWidget(self.frame_5)
-        self.horizontalLayout_2.addWidget(self.frame_5)
-
-
         MainWindow.setCentralWidget(self.centralwidget)
-
-
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 26))
         self.menubar.setObjectName("menubar")
@@ -89,7 +67,6 @@ class Ui_Buttons(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.but1.setText(_translate("MainWindow", "Live Detection"))
         self.but2.setText(_translate("MainWindow", "Manual Detection"))
-        self.but3.setText(_translate("MainWindow", "Image Detection"))
 
 
 if __name__ == "_main_":

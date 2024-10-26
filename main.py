@@ -1,6 +1,2 @@
-import ui.startup as StartupApp
-
-StartupApp.startApp()
-
-
-
+import ui.startup
+ui.startup.run()

@@ -1,10 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import re
-import api.firebase_wrapper as firebase_wrapper
 
 class Ui_OtherWindow1(object):
     def backWindow(self, MainWindow):
-        from startup import Ui_MainWindoww
+        from ui.startup import Ui_MainWindoww
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindoww()
         self.ui.setupUi(self.window)
@@ -26,12 +25,14 @@ class Ui_OtherWindow1(object):
     def submit_data(self, MainWindow):
         email_text = self.email.text()  # Retrieve text from email field
         password_text = self.passw.text()  # Retrieve text from password field
-
-        out = firebase_wrapper.signup(email_text, password_text)
-        if(not out[0]):
-            QtWidgets.QMessageBox.warning(None, "Invalid Input", out[1])
+        
+        if not self.is_valid_email(email_text):
+            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Please enter a valid email address.")
             return
 
+        if not password_text:
+            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Password cannot be empty.")
+            return
 
         QtWidgets.QMessageBox.information(None, "Success", "Registration Successful!")
         self.buttons(MainWindow)

@@ -1,6 +1,6 @@
 import cv2 as cv
-from consts import *
-from tools import tools2
+from cv_detection.consts import *
+from cv_detection.tools import tools2
 
 t = tools2()
 frame = cv.imread('./Untitled.jpeg')

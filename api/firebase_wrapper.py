@@ -34,4 +34,3 @@ def signup(email, passw):
     return [True, "Signup successful"]
 
 
-

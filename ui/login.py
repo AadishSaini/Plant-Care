@@ -1,13 +1,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import re
-import api.firebase_wrapper as firebase_wrapper
+# import api.firebase_wrapper as fr
 
 class Ui_OtherWindow2(object):
     def _init_(self):
         self.is_valid_credentials = False  # Boolean to determine navigation
 
     def backWindow(self, MainWindow):
-        from startup import Ui_MainWindoww
+        from ui.startup import Ui_MainWindoww
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindoww()
         self.ui.setupUi(self.window)
@@ -28,18 +28,28 @@ class Ui_OtherWindow2(object):
 
     def submit_data(self, MainWindow):
         email_text = self.email.text()  # Retrieve text from email field
-        password_text = self.passw.text()  # Retrieve text from password field  
-
-        out = firebase_wrapper.login(email_text, password_text)
+        password_text = self.passw.text()  # Retrieve text from password field
 
         # Simulate checking credentials (you can replace this with actual validation logic)
-
-        if not out[0]:
-            QtWidgets.QMessageBox.warning(None, "Invalid Input", out[1])
-            return
+        if email_text == "a@a.com" and password_text == "123":  # Replace with your logic
+            self.is_valid_credentials = True
         else:
+            self.is_valid_credentials = False
+
+        if not self.is_valid_email(email_text):
+            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Please enter a valid email address.")
+            return
+
+        if not password_text:
+            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Password cannot be empty.")
+            return
+
+        if self.is_valid_credentials:
             QtWidgets.QMessageBox.information(None, "Success", "Registration Successful!")
             self.buttons(MainWindow)  # Open new page if valid credentials
+        else:
+            QtWidgets.QMessageBox.warning(None, "Invalid Credentials", "Wrong email or password.")
+
         # Clear the input fields after submission
         self.email.clear()
         self.passw.clear()

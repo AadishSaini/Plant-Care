@@ -2,10 +2,10 @@ import cv2 as cv
 from cv_detection.consts import *
 from cv_detection.tools import tools2
 import time, threading 
-import model.testingModel1
+import models.testingModel1 as testingModel1
 
 
-class ImageDetection:
+class cvmodel:
     def __init__(self):
         self.t = tools2
         self.camera = 0
@@ -13,27 +13,21 @@ class ImageDetection:
     def save_img(self, img):
         try:
             cv.imwrite("detected.jpg", img)
-            print(model.testingModel1.predict_top_k("detected.jpg"))
+            print(testingModel1.predict_top_k("detected.jpg"))
         except:
             pass
     def manual_video(self):
         cap = cv.VideoCapture(self.camera)
         while True:
             ret, frame = cap.read()
-
             key = cv.waitKey(1)
             if key == ord('q'):  # Press 'q' to quit
                 break
             elif key == ord(' '):  # Press space to capture
                 self.save_img(frame) # Save the frame
                 cv.imshow("frame", frame)
-                
-                
             
             cv.imshow("feed", frame)
-        # cv.imshow('frame', frame)
-
-    
     def image_one(self, image):
         hsv_frame = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 

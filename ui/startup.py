@@ -129,12 +129,10 @@ class Ui_MainWindoww(object):
         self.new_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">New?</p></body></html>"))
         self.signupBut.setText(_translate("MainWindow", "SIGNUP"))
 
-import sys
 
+def run():
 
-
-
-def startApp():
+    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindoww()
