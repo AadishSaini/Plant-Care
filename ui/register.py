@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import re
-import firebase_wrapper
+import api.firebase_wrapper as firebase_wrapper
 
 class Ui_OtherWindow1(object):
     def backWindow(self, MainWindow):
@@ -12,7 +12,7 @@ class Ui_OtherWindow1(object):
         self.window.show()
 
     def buttons(self, MainWindow):
-        from buttons import Ui_Buttons
+        from ui.buttons import Ui_Buttons
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_Buttons()
         self.ui.setupUi(self.window)

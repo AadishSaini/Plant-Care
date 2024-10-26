@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from register import Ui_OtherWindow1
-from login import Ui_OtherWindow2
+from ui.register import Ui_OtherWindow1
+from ui.login import Ui_OtherWindow2
 
 class Ui_MainWindoww(object):
     def openWindow1(self, MainWindow):
@@ -129,12 +129,15 @@ class Ui_MainWindoww(object):
         self.new_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">New?</p></body></html>"))
         self.signupBut.setText(_translate("MainWindow", "SIGNUP"))
 
-
-
 import sys
-app = QtWidgets.QApplication(sys.argv)
-MainWindow = QtWidgets.QMainWindow()
-ui = Ui_MainWindoww()
-ui.setupUi(MainWindow)
-MainWindow.show()
-sys.exit(app.exec_())
+
+
+
+
+def startApp():
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindoww()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

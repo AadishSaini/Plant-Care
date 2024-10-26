@@ -1,8 +1,8 @@
 import cv2 as cv
-from consts import *
-from tools import tools2
+from cv_detection.consts import *
+from cv_detection.tools import tools2
 import time, threading 
-import testingModel1
+import model.testingModel1
 
 
 class ImageDetection:
@@ -13,7 +13,7 @@ class ImageDetection:
     def save_img(self, img):
         try:
             cv.imwrite("detected.jpg", img)
-            print(testingModel1.predict_top_k("detected.jpg"))
+            print(model.testingModel1.predict_top_k("detected.jpg"))
         except:
             pass
     def manual_video(self):

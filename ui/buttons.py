@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from cvpart import ImageDetection 
+from cv_detection.cvpart import ImageDetection 
 
 class Ui_Buttons(object):
     def __init__(self):
