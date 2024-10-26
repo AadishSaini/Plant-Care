@@ -34,5 +34,4 @@ def signup(email, passw):
     return [True, "Signup successful"]
 
 
-print(signup("b@gmail.com", "sjbdgfjksdghkjsdhgsd"))
 

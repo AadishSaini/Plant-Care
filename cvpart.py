@@ -5,9 +5,10 @@ import time, threading
 import testingModel1
 
 
-class cv:
+class ImageDetection:
     def __init__(self):
-        pass
+        self.t = tools2
+        self.camera = 0
 
     def save_img(self, img):
         try:
@@ -15,13 +16,30 @@ class cv:
             print(testingModel1.predict_top_k("detected.jpg"))
         except:
             pass
+    def manual_video(self):
+        cap = cv.VideoCapture(self.camera)
+        while True:
+            ret, frame = cap.read()
 
+            key = cv.waitKey(1)
+            if key == ord('q'):  # Press 'q' to quit
+                break
+            elif key == ord(' '):  # Press space to capture
+                self.save_img(frame) # Save the frame
+                cv.imshow("frame", frame)
+                
+                
+            
+            cv.imshow("feed", frame)
+        # cv.imshow('frame', frame)
+
+    
     def image_one(self, image):
         hsv_frame = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 
         # apply green mask
-        green_mask, masked_on_frame_green = t.create_mask(hsv_frame, frame, LOWER_GREEN, UPPER_GREEN)
-        brown_mask, masked_on_frame_brown = t.create_mask(hsv_frame, frame, LOWER_BROWN, UPPER_BROWN)
+        green_mask, masked_on_frame_green = self.t.create_mask(hsv_frame, image, LOWER_GREEN, UPPER_GREEN)
+        brown_mask, masked_on_frame_brown = self.t.create_mask(hsv_frame, image, LOWER_BROWN, UPPER_BROWN)
         
         # find contours
         contours_green, _ = cv.findContours(green_mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
@@ -49,7 +67,7 @@ class cv:
 
     
     def video_one(self):
-        cap = cv.VideoCapture(4)
+        cap = cv.VideoCapture(self.camera)
         t = tools2()
         if not cap.isOpened():
             print('cam nahi khula')
