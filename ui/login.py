@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import re
-# import api.firebase_wrapper as fr
+import api.firebase_wrapper as fr
 
 class Ui_OtherWindow2(object):
     def _init_(self):
@@ -29,26 +29,27 @@ class Ui_OtherWindow2(object):
     def submit_data(self, MainWindow):
         email_text = self.email.text()  # Retrieve text from email field
         password_text = self.passw.text()  # Retrieve text from password field
+        out = fr.login(email_text, password_text)
 
         # Simulate checking credentials (you can replace this with actual validation logic)
-        if email_text == "a@a.com" and password_text == "123":  # Replace with your logic
+        if out[0]:  # Replace with your logic
             self.is_valid_credentials = True
         else:
             self.is_valid_credentials = False
 
-        if not self.is_valid_email(email_text):
-            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Please enter a valid email address.")
-            return
+        # if not self.is_valid_email(email_text):
+        #     QtWidgets.QMessageBox.warning(None, "Invalid Input", "Please enter a valid email address.")
+        #     return
 
-        if not password_text:
-            QtWidgets.QMessageBox.warning(None, "Invalid Input", "Password cannot be empty.")
-            return
+        # if not password_text:
+        #     QtWidgets.QMessageBox.warning(None, "Invalid Input", "Password cannot be empty.")
+        #     return
 
         if self.is_valid_credentials:
             QtWidgets.QMessageBox.information(None, "Success", "Registration Successful!")
             self.buttons(MainWindow)  # Open new page if valid credentials
         else:
-            QtWidgets.QMessageBox.warning(None, "Invalid Credentials", "Wrong email or password.")
+            QtWidgets.QMessageBox.warning(None, "Invalid Credentials", out[1])
 
         # Clear the input fields after submission
         self.email.clear()

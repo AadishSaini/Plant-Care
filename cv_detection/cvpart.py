@@ -16,6 +16,22 @@ class cvmodel:
         self.t = tools2
         self.camera = 0
 
+        self.live_name = ''
+
+    def save_img_live(self, img):
+        try:
+            cv.imwrite("detected.jpg", img)
+            data = testingModel1.predict_top_k("detected.jpg")
+            name = data[0][0]
+            self.live_name = name
+            print("\n\n", name)
+            info = pc.get_plant_info(name)
+            pc.print_info(info, name)
+
+        except Exception as e:
+            print(f"Error in save_img: {e}")
+            pass
+
     def save_img(self, img):
         try:
             cv.imwrite("detected.jpg", img)
@@ -79,6 +95,7 @@ class cvmodel:
             cv.rectangle(contour_image, red_dimensions[0], red_dimensions[1], (0, 0, 255), 2)
             cv.rectangle(contour_image, (x_b-buffer, y_b-buffer), (x_b + w_b+buffer, y_b + h_b +buffer), (255, 0 , 0), 2) 
 
+            
         except:
             pass
         
@@ -126,14 +143,19 @@ class cvmodel:
                 red_dimensions =  ((x-buffer, y-buffer), (x + w+buffer, y + h +buffer))
                 cv.rectangle(contour_image, red_dimensions[0], red_dimensions[1], (0, 0, 255), 2)
                 cv.rectangle(contour_image, (x_b-buffer, y_b-buffer), (x_b + w_b+buffer, y_b + h_b +buffer), (255, 0 , 0), 2) 
+                label = self.live_name
+                label_position = (x-buffer, y - 10-buffer)  # Slightly above the rectangle
+                
+                # Draw the label on the image
+                cv.putText(contour_image, label, label_position, cv.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
             except:
                 pass
             
             
-            if dt > 2:
+            if dt > 1:
                 img = frame[red_dimensions[0][1]: red_dimensions[1][1], red_dimensions[0][0]:red_dimensions[1][0]]
-                thread = threading.Thread(target=self.save_img, args=(img,))
+                thread = threading.Thread(target=self.save_img_live, args=(img,))
                 thread.start()
                 dt = 0
 
