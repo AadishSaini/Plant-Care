@@ -1,7 +1,7 @@
 
 # PlantCare - Intelligent Plant Recognition and Care Guide App
 
-**PlantCare** is a mobile application that uses advanced data classification models and OpenCV for accurate plant recognition. By analyzing plant features, it identifies the plant species and provides personalized, up-to-date care information to help users maintain optimal plant health. With its focus on precision, practicality, and scalability, PlantCare is designed to be an indispensable tool for plant enthusiasts, gardeners, researchers, and anyone looking to improve their plant care knowledge.
+**PlantCare** is a mobile application that uses advanced data classification models (not pretrained) and OpenCV for accurate plant recognition. By analyzing plant features, it identifies the plant species and provides personalized, up-to-date care information to help users maintain optimal plant health. With its focus on precision, practicality, and scalability, PlantCare is designed to be an indispensable tool for plant enthusiasts, gardeners, researchers, and anyone looking to improve their plant care knowledge.
 
 ## 📋 Problem Statement
 
@@ -54,6 +54,7 @@ Our app bridges this gap by combining **plant recognition technology with compre
 - **Machine Learning**: Used for data classification and plant species recognition.
 - **OpenCV**: Utilized for feature extraction and image analysis.
 - **Backend Development**: For data handling, model training, and real-time data extraction.
+- **Tensorflow**: to train the model.
 - **PyQt5**: Used to develop interesting and intriguing UI's.
 - **Web-Scraping** - to get information on plants taken
 - **firebase** - for user auth
