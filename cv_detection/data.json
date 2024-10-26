@@ -1,0 +1,333 @@
+{
+    "plants": [
+        {
+            "name": "African Violet (Saintpaulia ionantha)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil consistently moist"
+        },
+        {
+            "name": "Aloe Vera",
+            "sunlight": "Full sun to partial shade",
+            "soil": "Well-draining cactus mix",
+            "weather": "Warm and dry",
+            "water": "Water deeply, then let soil dry out"
+        },
+        {
+            "name": "Anthurium (Anthurium andraeanum)",
+            "sunlight": "Bright indirect light",
+            "soil": "Light, well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Areca Palm (Dypsis lutescens)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting soil",
+            "weather": "Warm and humid",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Asparagus Fern (Asparagus setaceus)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Mild to warm",
+            "water": "Keep soil slightly moist"
+        },
+        {
+            "name": "Begonia (Begonia spp.)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when the top of the soil feels dry"
+        },
+        {
+            "name": "Bird of Paradise (Strelitzia reginae)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water regularly, allowing soil to dry between waterings"
+        },
+        {
+            "name": "Birds Nest Fern (Asplenium nidus)",
+            "sunlight": "Indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil consistently moist"
+        },
+        {
+            "name": "Boston Fern (Nephrolepis exaltata)",
+            "sunlight": "Indirect light",
+            "soil": "Peat-based potting mix",
+            "weather": "Cool and humid",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Calathea",
+            "sunlight": "Indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil moist but not soggy"
+        },
+        {
+            "name": "Cast Iron Plant (Aspidistra elatior)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Mild to warm",
+            "water": "Allow soil to dry out between waterings"
+        },
+        {
+            "name": "Chinese Money Plant (Pilea peperomioides)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm",
+            "water": "Water when the top inch of soil is dry"
+        },
+        {
+            "name": "Chinese evergreen (Aglaonema)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Let soil dry out slightly between waterings"
+        },
+        {
+            "name": "Christmas Cactus (Schlumbergera bridgesii)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Mild to warm",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Chrysanthemum",
+            "sunlight": "Full sun",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool to warm",
+            "water": "Keep soil consistently moist"
+        },
+        {
+            "name": "Ctenanthe",
+            "sunlight": "Indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Daffodils (Narcissus spp.)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool to warm",
+            "water": "Water moderately"
+        },
+        {
+            "name": "Dracaena",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm",
+            "water": "Allow soil to dry out between waterings"
+        },
+        {
+            "name": "Dumb Cane (Dieffenbachia spp.)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Elephant Ear (Alocasia spp.)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil moist but not soggy"
+        },
+        {
+            "name": "English Ivy (Hedera helix)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Cool to mild",
+            "water": "Water when top of soil is dry"
+        },
+        {
+            "name": "Hyacinth (Hyacinthus orientalis)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool to mild",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Iron Cross begonia (Begonia masoniana)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Jade plant (Crassula ovata)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining cactus mix",
+            "weather": "Warm and dry",
+            "water": "Water deeply, then let soil dry out"
+        },
+        {
+            "name": "Kalanchoe",
+            "sunlight": "Full sun",
+            "soil": "Well-draining cactus mix",
+            "weather": "Warm and dry",
+            "water": "Let soil dry between waterings"
+        },
+        {
+            "name": "Lilium (Hemerocallis)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool to warm",
+            "water": "Water moderately"
+        },
+        {
+            "name": "Lily of the valley (Convallaria majalis)",
+            "sunlight": "Partial shade",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool",
+            "water": "Keep soil consistently moist"
+        },
+        {
+            "name": "Money Tree (Pachira aquatica)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Monstera Deliciosa (Monstera deliciosa)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Orchid",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining orchid mix",
+            "weather": "Warm and humid",
+            "water": "Water weekly, allowing to dry slightly between"
+        },
+        {
+            "name": "Parlor Palm (Chamaedorea elegans)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Peace lily",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil moist"
+        },
+        {
+            "name": "Poinsettia (Euphorbia pulcherrima)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Polka Dot Plant (Hypoestes phyllostachya)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil slightly moist"
+        },
+        {
+            "name": "Ponytail Palm (Beaucarnea recurvata)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and dry",
+            "water": "Water deeply, allowing to dry between waterings"
+        },
+        {
+            "name": "Pothos (Ivy arum)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Prayer Plant (Maranta leuconeura)",
+            "sunlight": "Indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil consistently moist"
+        },
+        {
+            "name": "Rattlesnake Plant (Calathea lancifolia)",
+            "sunlight": "Indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Keep soil slightly moist"
+        },
+        {
+            "name": "Rubber Plant (Ficus elastica)",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Sago Palm (Cycas revoluta)",
+            "sunlight": "Full sun",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and dry",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Schefflera",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Snake plant (Sanseviera)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm",
+            "water": "Water when soil is completely dry"
+        },
+        {
+            "name": "Tradescantia",
+            "sunlight": "Bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and humid",
+            "water": "Water when top inch of soil is dry"
+        },
+        {
+            "name": "Tulip",
+            "sunlight": "Full sun",
+            "soil": "Well-draining garden soil",
+            "weather": "Cool to mild",
+            "water": "Keep soil evenly moist"
+        },
+        {
+            "name": "Venus Flytrap",
+            "sunlight": "Full sun",
+            "soil": "Wet, acidic soil",
+            "weather": "Warm and humid",
+            "water": "Keep soil moist, do not let it dry out"
+        },
+        {
+            "name": "Yucca",
+            "sunlight": "Full sun",
+            "soil": "Well-draining soil",
+            "weather": "Warm and dry",
+            "water": "Water deeply, let soil dry out between waterings"
+        },
+        {
+            "name": "ZZ Plant (Zamioculcas zamiifolia)",
+            "sunlight": "Low to bright indirect light",
+            "soil": "Well-draining potting mix",
+            "weather": "Warm and dry",
+            "water": "Let soil dry out completely"
+        }
+    ]
+}

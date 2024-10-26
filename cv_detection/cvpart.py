@@ -3,7 +3,13 @@ from cv_detection.consts import *
 from cv_detection.tools import tools2
 import time, threading 
 import models.testingModel1 as testingModel1
+from cv_detection.web_scraper import PlantCare
+from PyQt5.QtWidgets import QApplication
+import sys
+from ui.popup import CustomPopup
 
+
+pc = PlantCare('./cv_detection/data.json')
 
 class cvmodel:
     def __init__(self):
@@ -13,9 +19,29 @@ class cvmodel:
     def save_img(self, img):
         try:
             cv.imwrite("detected.jpg", img)
-            print(testingModel1.predict_top_k("detected.jpg"))
-        except:
+            data = testingModel1.predict_top_k("detected.jpg")
+            name = data[0][0]
+            print("\n\n", name)
+            info = pc.get_plant_info(name)
+            pc.print_info(info, name)
+
+            # Importing after QApplication has been initialized
+            buf = "\n".join([f"Plant Name: {str(info['name'])} ",
+            f"Sunlight Requirements: {str(info['sunlight'])} ",
+            f"Soil Quality: {str(info['soil'])} ",
+            f"Weather Required: {str(info['weather'])} ",
+            f"Water Requirements: {str(info['water'])}"])
+
+            self.show_popup(buf)
+        except Exception as e:
+            print(f"Error in save_img: {e}")
             pass
+    
+    def show_popup(self, info):
+        # Create a popup and show it
+        popup = CustomPopup(info)
+        popup.exec_()
+
     def manual_video(self):
         cap = cv.VideoCapture(self.camera)
         while True:
